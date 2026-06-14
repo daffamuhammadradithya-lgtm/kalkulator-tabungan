@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kalkulator Tabungan</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+    <h1>💰 Kalkulator Tabungan</h1>
+
+    <p>Uang yang ditabung per hari:</p>
+    <input type="number" id="tabungan" placeholder="Contoh: 5000">
+
+    <br><br>
+
+    <button onclick="hitung()">Hitung</button>
+
+    <h2>Hasil</h2>
+    <p id="minggu"></p>
+    <p id="bulan"></p>
+    <p id="tahun"></p>
+
+    <script>
+        function hitung() {
+            let perHari = Number(document.getElementById("tabungan").value);
+
+            let minggu = perHari * 7;
+            let bulan = perHari * 30;
+            let tahun = perHari * 365;
+
+            document.getElementById("minggu").innerText =
+                "1 Minggu: Rp" + minggu.toLocaleString("id-ID");
+
+            document.getElementById("bulan").innerText =
+                "1 Bulan: Rp" + bulan.toLocaleString("id-ID");
+
+            document.getElementById("tahun").innerText =
+                "1 Tahun: Rp" + tahun.toLocaleString("id-ID");
+        }
+    </script>
+
+</body>
+</html>
